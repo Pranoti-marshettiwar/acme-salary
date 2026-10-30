@@ -1,0 +1,18 @@
+services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: acme
+      MYSQL_DATABASE: acme_salary
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-pacme"]
+      interval: 5s
+      retries: 20
+    ports: ["3306:3306"]
+  app:
+    build: .
+    environment:
+      DATABASE_URL: mysql://root:acme@db:3306/acme_salary
+    depends_on:
+      db: { condition: service_healthy }
+    ports: ["4000:4000"]
