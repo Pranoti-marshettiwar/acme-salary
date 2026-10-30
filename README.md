@@ -24,7 +24,7 @@ Set `DATABASE_URL=mysql://user:pass@host:3306/db` to use a hosted database.
 
 ## Tests
 ```
-cd backend && npm test      # ~35 tests, no database needed, runs in about a second
+cd backend && npm test      # 32 tests, no database needed, runs in about a second
 ```
 
 ## Deploying
