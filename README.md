@@ -35,3 +35,9 @@ database (Railway MySQL, PlanetScale, Aiven free tier), set `DATABASE_URL`, then
 ## API
 `GET/POST /api/employees`, `GET/PUT/DELETE /api/employees/:id`, `GET /api/insights`, `GET /api/meta`.
 List params: `q`, `country`, `department`, `sortBy`, `order`, `page`, `pageSize` (max 100).
+
+## Deploying on Render + hosted MySQL
+1. Create a MySQL-compatible database (e.g. TiDB Cloud Serverless or Aiven free MySQL) and copy its connection URL.
+2. Render: New > Web Service > this repo > Runtime "Docker".
+3. Environment variables: `DATABASE_URL=<connection url>`, `DB_SSL=true`.
+4. Seed once from your machine: set the same two variables, then `cd backend && npm install && npm run seed`.
