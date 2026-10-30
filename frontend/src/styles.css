@@ -1,0 +1,9 @@
+:root {
+  --ink: #14212b; --muted: #55636e; --line: #d5dce1; --paper: #fff; --bg: #eef1f3;
+  --accent: #0b6b63; --accent-soft: rgba(11, 107, 99, 0.35); --danger: #b4531a;
+}
+html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: "IBM Plex Sans", system-ui, sans-serif; }
+.panel { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; }
+.num { font-variant-numeric: tabular-nums; text-align: right; }
+.muted { color: var(--muted); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

@@ -11,6 +11,6 @@ export function loadConfig(env = process.env) {
           password: env.DB_PASSWORD || '',
           database: env.DB_NAME || 'acme_salary',
         },
-    staticDir: env.STATIC_DIR || '../frontend/dist',
+    staticDir: env.STATIC_DIR || '../frontend/dist/frontend/browser',
   };
 }

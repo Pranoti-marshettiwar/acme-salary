@@ -2,7 +2,7 @@
 
 ## Architecture
 ```
-React (MUI)  --/api-->  Express routes  -->  services (validation, paging, insights, cache)  -->  repository  -->  MySQL
+Angular (Material)  --/api-->  Express routes  -->  services (validation, paging, insights, cache)  -->  repository  -->  MySQL
                                                   |
                                           domain (pure): fx, validation, stats
 ```
@@ -32,4 +32,4 @@ so the test suite needs no database and runs in about a second.
 
 ## Known gaps
 - SQL repository has no automated test; it is thin and parameterised, but an integration test against MySQL (e.g. in CI service container) is the next addition.
-- No UI tests.
+- UI: one small Karma/Jasmine spec (formatting helpers, `npm test` in `frontend/`, needs Chrome). No component tests yet.

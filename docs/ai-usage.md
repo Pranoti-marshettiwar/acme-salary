@@ -6,7 +6,7 @@ Built with Claude as an agentic pair. The workflow, in order:
 2. **Requirements before code.** Had the one-page requirements doc written and committed before any implementation; scope exclusions were argued, not defaulted.
 3. **Domain first, tests alongside.** Pure logic (validation, stats, FX, insights) written with tests, then wired to HTTP and SQL.
 4. **Review of AI output.** Test run caught a real defect (a bad country also produced a misleading currency error); fixed in validation and kept the test.
-5. **Verification.** Measured insights time at 10k rows instead of assuming; confirmed the UI builds.
+5. **Verification.** Measured insights time at 10k rows instead of assuming; confirmed the UI builds. Frontend was first built in React, then rebuilt in Angular 20 + Angular Material when the stack requirement changed (backend untouched, which validated the API boundary).
 
 Example prompts (condensed):
 - "Write a one-page requirements doc for an HR salary tool: goal, scope, deliberate exclusions with reasons."

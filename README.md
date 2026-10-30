@@ -1,7 +1,7 @@
 # ACME Salary Manager
 
 Web app for an HR manager to maintain salary records for 10,000 employees across 8 countries and to answer "how do we pay people?".
-Node.js (Express) + MySQL 8 + React (Vite, MUI).
+Node.js (Express) + MySQL 8 + Angular 20 (Angular Material).
 
 - Requirements: [docs/requirements.md](docs/requirements.md)
 - Design, trade-offs, performance: [docs/design.md](docs/design.md)
@@ -18,7 +18,7 @@ open http://localhost:4000
 ```
 # MySQL running locally; defaults: root / no password / db "acme_salary" (see backend/src/config.js)
 cd backend && npm install && npm run seed && npm start      # API on :4000
-cd frontend && npm install && npm run dev                   # UI on :5173, proxies /api
+cd frontend && npm install && npm start                     # UI on :4200 via `ng serve`, proxies /api
 ```
 Set `DATABASE_URL=mysql://user:pass@host:3306/db` to use a hosted database.
 
