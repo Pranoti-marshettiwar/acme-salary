@@ -7,3 +7,34 @@ html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: "
 .num { font-variant-numeric: tabular-nums; text-align: right; }
 .muted { color: var(--muted); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Always render Material in its light scheme: the page palette above is light-only,
+   and the prebuilt theme otherwise follows the OS dark-mode setting. */
+html { color-scheme: light; }
+
+/* Make every Material component use the app font (tokens fall back to a serif otherwise). */
+html {
+  --app-font: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --mat-sys-body-large-font: var(--app-font);
+  --mat-sys-body-medium-font: var(--app-font);
+  --mat-sys-body-small-font: var(--app-font);
+  --mat-sys-label-large-font: var(--app-font);
+  --mat-sys-label-medium-font: var(--app-font);
+  --mat-sys-label-small-font: var(--app-font);
+  --mat-sys-title-large-font: var(--app-font);
+  --mat-sys-title-medium-font: var(--app-font);
+  --mat-sys-title-small-font: var(--app-font);
+  --mat-sys-headline-small-font: var(--app-font);
+  --mat-sys-brand-font-family: var(--app-font);
+  --mat-sys-plain-font-family: var(--app-font);
+}
+.mat-mdc-tab-group, .mat-mdc-table, .mat-mdc-paginator, .mat-mdc-form-field, .mdc-dialog, .mat-mdc-button, .mat-mdc-select {
+  font-family: var(--app-font);
+}
+
+/* Readable tab labels and a visible active tab. */
+.mat-mdc-tab:not(.mdc-tab--active) .mdc-tab__text-label { color: var(--muted); }
+.mat-mdc-tab.mdc-tab--active .mdc-tab__text-label { color: var(--accent); font-weight: 600; }
+.mat-mdc-tab-group { --mdc-tab-indicator-active-indicator-color: var(--accent); --mat-tab-active-indicator-color: var(--accent); }
+.mat-mdc-table { background: transparent; }
+.mat-mdc-header-cell { font-weight: 600; color: var(--ink); }
