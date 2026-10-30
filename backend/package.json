@@ -1,0 +1,16 @@
+{
+  "name": "acme-salary-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "seed": "node scripts/seed.js",
+    "test": "node --test test/"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mysql2": "^3.11.5"
+  }
+}
