@@ -1,9 +1,15 @@
 import fs from 'node:fs';
 import mysql from 'mysql2/promise';
 
+const POOL_DEFAULTS = { waitForConnections: true, connectionLimit: 10, decimalNumbers: true, dateStrings: true };
+
+/** Pure: turns app config into mysql2 pool options. Keeps TLS settings for both URL and host-style configs. */
+export function buildPoolOptions(dbConfig) {
+  return { ...dbConfig, ...POOL_DEFAULTS };
+}
+
 export function createPool(dbConfig) {
-  const base = { waitForConnections: true, connectionLimit: 10, decimalNumbers: true, dateStrings: true };
-  return dbConfig.uri ? mysql.createPool({ uri: dbConfig.uri, ...base }) : mysql.createPool({ ...dbConfig, ...base });
+  return mysql.createPool(buildPoolOptions(dbConfig));
 }
 
 export async function migrate(pool) {
